@@ -9,10 +9,17 @@
  */
 int _printf(const char *format, ...)
 {
+	if (format != NULL)
+	{
+
 	va_list args;
 	unsigned int i = 0, num = 0;
 
 	va_start(args, format);
+
+	if (format[0] == '%' && format[1] == '\0')
+		return (-1);
+
 	while (format != NULL && format[i] != '\0')
 	{
 		if ('%' == format[i])
@@ -31,4 +38,6 @@ int _printf(const char *format, ...)
 	}
 	va_end(args);
 	return (num);
+	}
+	return (-1);
 }
