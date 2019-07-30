@@ -1,0 +1,8 @@
+# Ignore emacs autosave files ~
+*~
+
+# Ignore compiled files
+.[oa]
+
+# Ignore main test files
+main.c
