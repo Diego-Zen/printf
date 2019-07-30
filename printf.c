@@ -10,14 +10,7 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	unsigned int i = 0, j;
-	int num = 0;
-
-	optype_t list[] = {
-		{"c", print_char},
-		{"s", print_string},
-		{NULL, NULL}
-	};
+	unsigned int i = 0, num = 0;
 
 	va_start(args, format);
 	while (format != NULL && format[i] != '\0')
@@ -27,13 +20,7 @@ int _printf(const char *format, ...)
 			i++;
 			if (format[i] == '%')
 				num += _putchar(format[i]);
-			j = 0;
-			while (list[j].c != NULL)
-			{
-				if (format[i] == list[j].c[0])
-					num += list[j].f(args);
-				j++;
-			}
+			num += type_option(format[i], args);
 			i++;
 		}
 		else
@@ -43,55 +30,5 @@ int _printf(const char *format, ...)
 		}
 	}
 	va_end(args);
-	return (num);
-}
-
-/**
- * print_char - print character
- *
- * @args: char
- *
- * Return: integer
- */
-int print_char(va_list args)
-{
-	return (_putchar(va_arg(args, int)));
-}
-/**
- * print_integer - print integer
- *
- * @args: integer
- *
- */
-void print_integer(va_list args)
-{
-	printf("%d", va_arg(args, int));
-}
-/**
- * print_float - print float
- *
- * @args: float
- *
- */
-void print_float(va_list args)
-{
-	printf("%f", va_arg(args, double));
-}
-/**
- * print_string - print a string
- *
- * @args: string
- *
- * Return: integer
- */
-int print_string(va_list args)
-{
-	char *s;
-	int i;
-	int num;
-
-	s = va_arg(args, char *);
-	for (i = 0; s[i] != '\0'; i++)
-		num += _putchar(s[i]);
 	return (num);
 }
