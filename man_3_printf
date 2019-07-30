@@ -8,12 +8,16 @@ _printf - format and print data
 .B _printf
 .I OPTION
 .SH DESCRIPTION
-Print ARGUMENT(s) according to FORMAT, or execute according to OPTION:
-.SH OPTIONS
-.B ...
+FORMAT controls the output as in C printf. Interpreted squences are:
 .PP
-does not take any options yet
+%c char
+.PP
+%s string
+.PP
+%% a single %
+.PP
+%d base 10 or decimal
 .SH REPORTING BUGS
 Keep in mind this is still a WIP prototype and may not fully work as intented in every case
 .SH AUTHOR
-Written by David Bravo & Diego Monroy and all the Holberton mentors
+Written by David Bravo & Diego Monroy
