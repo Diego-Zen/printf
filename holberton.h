@@ -12,10 +12,10 @@
 typedef struct optype
 {
 	char *c;
-	void (*f)(va_list);
+	int (*f)(va_list);
 } optype_t;
 int _printf(const char *format, ...);
 int _putchar(char c);
-void print_char(va_list);
-void print_string(va_list);
+int print_char(va_list);
+int print_string(va_list);
 #endif

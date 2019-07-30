@@ -5,13 +5,14 @@
  *
  * @format: character string format
  *
- * Return: output
+ * Return: number of characters
  */
 int _printf(const char *format, ...)
 {
 	va_list args;
 	unsigned int i;
 	unsigned int j;
+	int num = 0;
 
 	optype_t list[] = {
 		{"c", print_char},
@@ -32,7 +33,7 @@ int _printf(const char *format, ...)
 			{
 				if (format[i] == list[j].c[0])
 				{
-					list[j].f(args);
+					num += list[j].f(args);
 				}
 				j++;
 			}
@@ -40,12 +41,12 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			_putchar(format[i]);
+			num += _putchar(format[i]);
 			i++;
 		}
 	}
 	va_end(args);
-	return (0);
+	return (num);
 }
 
 /**
@@ -53,10 +54,11 @@ int _printf(const char *format, ...)
  *
  * @args: char
  *
+ * Return: integer
  */
-void print_char(va_list args)
+int print_char(va_list args)
 {
-	_putchar(va_arg(args, int));
+	return (_putchar(va_arg(args, int)));
 }
 /**
  * print_integer - print integer
@@ -83,13 +85,16 @@ void print_float(va_list args)
  *
  * @args: string
  *
+ * Return: integer
  */
-void print_string(va_list args)
+int print_string(va_list args)
 {
 	char *s;
 	int i;
+	int num;
 
 	s = va_arg(args, char *);
 	for (i = 0; s[i] != '\0'; i++)
-		_putchar(s[i]);
+		num += _putchar(s[i]);
+	return num;
 }
