@@ -16,6 +16,7 @@ typedef struct optype
 } optype_t;
 int _printf(const char *format, ...);
 int _putchar(char c);
+int type_option(char ch, va_list);
 int print_char(va_list);
 int print_string(va_list);
 #endif
