@@ -10,8 +10,7 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	unsigned int i;
-	unsigned int j;
+	unsigned int i = 0, j;
 	int num = 0;
 
 	optype_t list[] = {
@@ -21,20 +20,18 @@ int _printf(const char *format, ...)
 	};
 
 	va_start(args, format);
-
-	i = 0;
 	while (format != NULL && format[i] != '\0')
 	{
 		if ('%' == format[i])
 		{
 			i++;
+			if (format[i] == '%')
+				num += _putchar(format[i]);
 			j = 0;
 			while (list[j].c != NULL)
 			{
 				if (format[i] == list[j].c[0])
-				{
 					num += list[j].f(args);
-				}
 				j++;
 			}
 			i++;
@@ -96,5 +93,5 @@ int print_string(va_list args)
 	s = va_arg(args, char *);
 	for (i = 0; s[i] != '\0'; i++)
 		num += _putchar(s[i]);
-	return num;
+	return (num);
 }
