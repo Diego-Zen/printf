@@ -8,7 +8,7 @@ _printf - format and print data
 .B _printf
 .I OPTION
 .SH DESCRIPTION
-FORMAT controls the output as in C printf. Interpreted squences are:
+FORMAT controls the output as in C printf. Interpreted sequences are:
 .PP
 %c char
 .PP
@@ -17,6 +17,8 @@ FORMAT controls the output as in C printf. Interpreted squences are:
 %% a single %
 .PP
 %d base 10 or decimal
+.PP
+%i same as %d
 .SH REPORTING BUGS
 Keep in mind this is still a WIP prototype and may not fully work as intented in every case
 .SH AUTHOR

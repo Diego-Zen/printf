@@ -23,9 +23,8 @@
 %x print a number in hexidecimal (base 16)
 %% print a percent sign (\% also works)
 ```
-
-## Features
-* features items...
+## Return value
+Upon successful return, these functions return the number of characters printed (excluding the null byte used to end output to strings).
 
 ## Authors | License
 @Diego-Zen - @dbravo0 | @Holberton School
