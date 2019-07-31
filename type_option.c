@@ -21,8 +21,9 @@ int type_option(char ch, va_list args)
 	while (list[i].c != NULL)
 	{
 		if (ch == list[i].c[0])
-			num += list[i].f(args);
+			return (num += list[i].f(args));
 		i++;
 	}
-	return (num);
+	num += _putchar('%');
+	return (num += _putchar(ch));
 }
