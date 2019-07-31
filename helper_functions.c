@@ -32,12 +32,12 @@ int print_string(va_list args)
 {
 	char *s;
 	int i;
-	int num;
+	int num = 0;
 
 	s = va_arg(args, char *);
 	if (s == NULL)
 		s = "(null)";
-	for (i = 0; s[i] != '\0'; i++)
+	for (i = 0 ; s[i] != '\0' ; i++)
 		num += _putchar(s[i]);
 	return (num);
 }
