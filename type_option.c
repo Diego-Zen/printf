@@ -15,6 +15,8 @@ int type_option(char ch, va_list args)
 	optype_t list[] = {
 		{"c", print_char},
 		{"s", print_string},
+		{"d", print_number},
+		{"i", print_number},
 		{NULL, NULL}
 	};
 
