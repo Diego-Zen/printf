@@ -27,7 +27,8 @@ int _printf(const char *format, ...)
 			i++;
 			if (format[i] == '%')
 				num += _putchar(format[i]);
-			num += type_option(format[i], args);
+			else
+				num += type_option(format[i], args);
 			i++;
 		}
 		else
