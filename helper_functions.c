@@ -13,10 +13,11 @@ int print_char(va_list args)
 }
 
 /**
- * print_integer - print integer
+ * print_number - print number
  *
- * @args: integer
+ * @args: number
  *
+ * Return: integer
  */
 int print_number(va_list args)
 {
