@@ -11,16 +11,43 @@ int print_char(va_list args)
 {
 	return (_putchar(va_arg(args, int)));
 }
+
 /**
  * print_integer - print integer
  *
  * @args: integer
  *
  */
-void print_integer(va_list args)
+int print_number(va_list args)
 {
-	printf("%d", va_arg(args, int));
+	unsigned int abs, aux, i, num;
+	int number;
+
+	num = 0;
+	number = va_arg(args, int);
+	if (number < 0)
+	{
+		abs = number * (-1);
+		num += _putchar('-');
+	}
+	else
+		abs = number;
+
+	aux = abs;
+	i = 1;
+	while (aux > 9)
+	{
+		aux = aux / 10;
+		i = i * 10;
+	}
+	while (i >= 1)
+	{
+		num += _putchar(((abs / i) % 10) + '0');
+		i = i / 10;
+	}
+	return (num);
 }
+
 /**
  * print_string - print string
  *
