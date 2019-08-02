@@ -1,4 +1,4 @@
-# C - printf
+# Printf project
 > Create a printf function in C
 
 ## _printf
@@ -25,6 +25,31 @@
 ```
 ## Return value
 Upon successful return, these functions return the number of characters printed (excluding the null byte used to end output to strings).
+
+## Example
+### Clone repo using HTTPS
+``` $ git clone https://github.com/Diego-Zen/printf.git ```
+
+### Create main function
+```C
+#include <stdio.h>
+#include "holberton.h"
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
+int main(void)
+{
+	_printf("Hello there!\n");
+	_printf("String: %s\n", "Hello world!");
+	return (0);
+}
+```
+
+### Compilation
+You can compile the files using this command:
+``` $ gcc -Wall -pedantic -Werror Wextra *.c ```
 
 ## Authors | License
 @Diego-Zen - @dbravo0 | @Holberton School

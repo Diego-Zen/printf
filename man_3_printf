@@ -1,8 +1,8 @@
-.TH _PRINTF 1 "July 2019" "0.1" "User Commands"
+.TH _PRINTF 3 "July 2019" "0.1" "User Commands"
 .SH NAME
 _printf - format and print data
 .SH SYNOPSIS
-.B _printf 
+.B _printf
 .I FORMAT [ARGUMENT]...
 .PP
 .B _printf
@@ -10,15 +10,20 @@ _printf - format and print data
 .SH DESCRIPTION
 FORMAT controls the output as in C printf. Interpreted sequences are:
 .PP
-%c char
+%c print characters
 .PP
-%s string
+%s print strings
 .PP
 %% a single %
 .PP
 %d base 10 or decimal
 .PP
-%i same as %d
+%i print integers
+.SH RETURN VALUE
+It's going to return the number of characters printed (excluding the null byte used at the end of the string)
+.SH EXAMPLE
+_printf("Hello world");
+_printf("This is %s", some_variable);
 .SH REPORTING BUGS
 Keep in mind this is still a WIP prototype and may not fully work as intented in every case
 .SH AUTHOR
