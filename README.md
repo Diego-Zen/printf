@@ -28,7 +28,7 @@ Upon successful return, these functions return the number of characters printed 
 
 ## Example
 ### Clone repo using HTTPS
-``` $ git clone https://github.com/Diego-Zen/printf.git
+``` $ git clone https://github.com/Diego-Zen/printf.git ```
 
 ### Create main function
 ```C
@@ -49,7 +49,7 @@ int main(void)
 
 ### Compilation
 You can compile the files using this command:
-``` $ gcc -Wall -pedantic -Werror Wextra *.c
+``` $ gcc -Wall -pedantic -Werror Wextra *.c ```
 
 ## Authors | License
 @Diego-Zen - @dbravo0 | @Holberton School
