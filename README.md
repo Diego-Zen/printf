@@ -52,4 +52,4 @@ You can compile the files using this command:
 ``` $ gcc -Wall -pedantic -Werror Wextra *.c ```
 
 ## Authors | License
-@Diego-Zen - @dbravo0 | @Holberton School
+@diegozencode - @dbravo0 | @Holberton School
